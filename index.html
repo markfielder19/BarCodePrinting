@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <style type="text/css" media="print">
+        @page 
+        {
+            size: auto;   /* auto is the initial value */
+            margin: 0mm;  /* this affects the margin in the printer settings */
+        }
+    </style>
+<button id="printButton" type="button" onclick="myFunction()">Print</button>
+<div>
+    <svg id="code39"></svg>
+</div>
+</body>
+<script src="node_modules/jsbarcode/dist/JsBarcode.all.js"></script>
+<script>
+    JsBarcode("#code39", "AER Test", {format: "code39", width: 1.2, height:50 });
+    function myFunction() {
+      document.getElementById("printButton").hidden = true;
+      window.print();
+      document.getElementById("printButton").hidden = false;
+    }
+</script>
+
+</html> 
